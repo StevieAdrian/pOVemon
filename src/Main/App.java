@@ -1,25 +1,35 @@
 package Main;
 
 import java.util.Scanner;
+import java.util.Vector;
 
 public class App {
 	private Scanner scan = new Scanner(System.in);
-	Player player = new Player();
+	private Player player;
 	
 	private void shop() {
-		System.out.println("----------------------------");
+		System.out.println("--------------------------------");
 		System.out.println("        Povemon Shop");
-		System.out.println("----------------------------");
-		System.out.println("Available Storage");
-		System.out.println("CharbolT [Fire] ");
-		System.out.println("AquaslaSh [Water]");
-		System.out.println("Treething [Grass]");
-		System.out.println("RUmbleu [Fire]");
-		System.out.println("ACranix [Water]");
-		System.out.println("VerMarok [Grass]");
-		System.out.println("MirMage [Fire]");
-		System.out.println("FOscorra [Grass]");
-		System.out.println("Money: " + );
+		System.out.println("--------------------------------");
+		System.out.println("Available Storage    | Price");
+		System.out.println("--------------------------------");
+		System.out.println("CharbolT [Fire]      | 200");
+		System.out.println("--------------------------------");
+		System.out.println("AquaslaSh [Water]    | 200");
+		System.out.println("--------------------------------");
+		System.out.println("Treething [Grass]    | 200");
+		System.out.println("--------------------------------");
+		System.out.println("RUmbleu [Fire]       | 750");
+		System.out.println("--------------------------------");
+		System.out.println("ACranix [Water]      | 500");
+		System.out.println("--------------------------------");
+		System.out.println("VerMarok [Grass]     | 1000");
+		System.out.println("--------------------------------");
+		System.out.println("MirMage [Fire]       | 350");
+		System.out.println("--------------------------------");
+		System.out.println("FOscorra [Grass]     | 400");
+		System.out.println("--------------------------------");
+		System.out.println("Name: " + player.getName() + " Money: " + player.getMoney());
 	}
 	
 	private void menu() {
@@ -82,6 +92,7 @@ public class App {
 	}
 
 	public App() {
+		
 		System.out.println("-----------------------------");
 		System.out.println("| Welcome to Povemon World! |");
 		System.out.println("-----------------------------");
@@ -97,11 +108,11 @@ public class App {
 			verif = scan.nextLine();
 			
 			if (verif.equalsIgnoreCase("Y")) {
-				
+				player = new Player(name, 100);
 			}
 		} while(!verif.equalsIgnoreCase("Y"));
-		
-//		choosePovemon();
+
+		choosePovemon();
 		menu();
 	}
 

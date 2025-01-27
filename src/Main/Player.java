@@ -3,6 +3,7 @@ package Main;
 public class Player {
 	protected String name;
 	protected int money;
+	 private static Player instance;
 	
 	public Player(String name, int money) {
 		super();
@@ -10,6 +11,17 @@ public class Player {
 		this.money = money;
 	}
 	
+	public static Player getInstance() {
+        if (instance == null) {
+            instance = new Player("Player", 100); 
+        }
+        return instance;
+    }
+
+    public static void setInstance(Player player) {
+        instance = player; 
+    }
+    
 	public String getName() {
 		return name;
 	}
